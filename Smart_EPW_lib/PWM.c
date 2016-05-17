@@ -10,7 +10,6 @@ void init_Wheels() {
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE); // portA enable
 
     GPIO_InitStructure.GPIO_Pin = Wheels | EnableWheels;  // PC6,7,8,9 | PA8,9
-    //GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;  //alternate function
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; //push/pull configuration

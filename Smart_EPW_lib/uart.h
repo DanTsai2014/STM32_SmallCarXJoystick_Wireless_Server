@@ -13,16 +13,12 @@
 
 /*the usart acept the command from RX when RX interrupt is trigger*/
 uint8_t Receive_data ;
-unsigned char Receive_data_2;
 
 /*Setting the USART MAX string lenth */
 #define MAX_STRLEN 50 // this is the maximum string length of our string in characters
 
 volatile uint8_t received_string[MAX_STRLEN]; // this will hold the recieved string
-volatile unsigned char received_string_2[MAX_STRLEN];
 volatile unsigned char received_tmp[2];
-volatile uint8_t received_strings;
-volatile unsigned char t;
 
 extern void init_USART3(uint32_t baurate);
 extern void USART3_IRQHandler(void);
