@@ -150,7 +150,7 @@ void parse_Joystick_dir(void *pvParameters) //unsigned uint16_t Joystick_cmd
 		}
 
 		//else if(ADC1ConvertedVoltage[0] < 3000 && ADC1ConvertedVoltage[1] < 3000 && ADC1ConvertedVoltage[0] > 1500 && ADC1ConvertedVoltage[1] > 1500){  //stop
-			else if(received_tmp[0] == 's'){
+			else if(received_tmp[0] == 's' && received_tmp[1] == 's'){
 			//Joystick_x_Filter = ADC1ConvertedVoltage[0];
 			//Joystick_y_Filter = ADC1ConvertedVoltage[1];
 				//car_state = CAR_STATE_STOPPING;

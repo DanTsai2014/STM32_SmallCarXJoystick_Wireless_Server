@@ -274,7 +274,11 @@ void USART2_IRQHandler(void){
 	    cnt++;
 	    if(cnt > 1){
 	    	cnt = 0;
-            USART_puts(USART3, received_tmp);
+	    	USART_puts(USART3, received_tmp);
+	    	int i;
+	    	for(i = 0; i < 1; i++){
+	    		received_tmp[i] = 0;
+	    	}
         }
 	}
 }
