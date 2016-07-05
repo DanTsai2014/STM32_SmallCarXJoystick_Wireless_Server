@@ -25,7 +25,7 @@ void parse_Joystick_dir(void *pvParameters)
 {
 	while(1)
 	{
-		if(received_tmp[0] == 'f'){  //forward
+		/*if(received_tmp[0] == 'f'){  //forward
 			//PWM_Control
 			TIM_SetCompare1(TIM1, 256 - 1);
 			TIM_SetCompare2(TIM1, 256 - 1);
@@ -128,6 +128,54 @@ void parse_Joystick_dir(void *pvParameters)
 			vTaskDelay(100);
 		}
 		else{
+		}*/
+
+        //only one speed
+		if(received_tmp == 'f'){
+			//PWM_Control
+			TIM_SetCompare1(TIM1, 256 - 1);
+			TIM_SetCompare2(TIM1, 256 - 1);
+			TIM_SetCompare1(TIM3, 0);
+			TIM_SetCompare2(TIM3, 127); //minimum: 95
+			TIM_SetCompare3(TIM3, 0);
+			TIM_SetCompare4(TIM3, 127);
+		    vTaskDelay(100);
 		}
+		if(received_tmp == 's'){
+			TIM_SetCompare1(TIM1, 0);
+			TIM_SetCompare2(TIM1, 0);
+			TIM_SetCompare1(TIM3, 0);
+			TIM_SetCompare2(TIM3, 0); //minimum: 95
+			TIM_SetCompare3(TIM3, 0);
+			TIM_SetCompare4(TIM3, 0);
+		    vTaskDelay(100);
+		}
+		if(received_tmp == 'b'){
+			TIM_SetCompare1(TIM1, 256 - 1);
+			TIM_SetCompare2(TIM1, 256 - 1);
+			TIM_SetCompare1(TIM3, 127);
+			TIM_SetCompare2(TIM3, 0);
+			TIM_SetCompare3(TIM3, 127);
+			TIM_SetCompare4(TIM3, 0);
+			vTaskDelay(100);
+		}
+		if(received_tmp == 'l'){
+			TIM_SetCompare1(TIM1, 256 - 1);
+			TIM_SetCompare2(TIM1, 256 - 1);
+            TIM_SetCompare1(TIM3, 127);
+            TIM_SetCompare2(TIM3, 0);
+            TIM_SetCompare3(TIM3, 0);
+            TIM_SetCompare4(TIM3, 127);
+		    vTaskDelay(100);
+		}
+		if(received_tmp == 'r'){
+			TIM_SetCompare1(TIM1, 256 - 1);
+			TIM_SetCompare2(TIM1, 256 - 1);
+            TIM_SetCompare1(TIM3, 0);
+            TIM_SetCompare2(TIM3, 127);
+            TIM_SetCompare3(TIM3, 127);
+            TIM_SetCompare4(TIM3, 0);
+            vTaskDelay(100);
+		}		
     }
 }
