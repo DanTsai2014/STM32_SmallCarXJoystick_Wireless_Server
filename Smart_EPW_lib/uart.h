@@ -18,8 +18,8 @@ uint8_t Receive_data ;
 #define MAX_STRLEN 50 // this is the maximum string length of our string in characters
 
 volatile uint8_t received_string[MAX_STRLEN]; // this will hold the recieved string
-//volatile unsigned char received_tmp[2];
-volatile unsigned char received_tmp;
+volatile unsigned char received_tmp[2];
+//volatile unsigned char received_tmp;
 
 extern void init_USART3(uint32_t baurate);
 extern void USART3_IRQHandler(void);
