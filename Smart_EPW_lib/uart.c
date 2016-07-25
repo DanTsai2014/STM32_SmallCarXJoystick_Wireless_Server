@@ -235,7 +235,7 @@ void init_USART2(uint32_t baurate){
 		}
 	}
 }*/
-
+/*
 void USART2_IRQHandler(void){
 	if(USART_GetITStatus(USART2, USART_IT_RXNE)){
 		static uint8_t cnt = 0;
@@ -250,14 +250,14 @@ void USART2_IRQHandler(void){
 	    	}
         }
 	}
-}
-/*
+}*/
+
 void USART2_IRQHandler(void){
 	if(USART_GetITStatus(USART2, USART_IT_RXNE)){
 		received_tmp = USART_ReceiveData(USART2);
 	}
 }
-*/
+
 void USART_puts(USART_TypeDef* USARTx, volatile uint8_t *s) //uint8_t = unsigned char
 {
 	while(*s){
